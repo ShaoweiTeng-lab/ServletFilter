@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+    <filter>
+        <filter-name>NullFilter</filter-name>
+        <filter-class>com.example.webserver.filters.NullFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>ConvertFilter</filter-name>
+        <filter-class>com.example.webserver.filters.ConvertFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>ZeroFilter</filter-name>
+        <filter-class>com.example.webserver.filters.ZeroFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>NullFilter</filter-name>
+        <url-pattern>/operation/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>ConvertFilter</filter-name>
+        <url-pattern>/operation/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>ZeroFilter</filter-name>
+        <url-pattern>/operation/divided</url-pattern>
+    </filter-mapping>
+</web-app>
